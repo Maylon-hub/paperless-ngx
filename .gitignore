@@ -115,3 +115,8 @@ celerybeat-schedule*
 
 # Git worktree local folder
 .worktrees
+
+# Temporary test analysis files and logs
+analyze_cov.py
+coverage_report.txt
+logs-actions/
