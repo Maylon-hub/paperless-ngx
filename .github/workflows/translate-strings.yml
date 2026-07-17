@@ -18,7 +18,7 @@ jobs:
         env:
           GH_REF: ${{ github.ref }} # sonar rule:githubactions:S7630 - avoid injection
         with:
-          token: ${{ secrets.PNGX_BOT_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ env.GH_REF }}
           persist-credentials: true # for pushing translation branch
       - name: Set up Python
