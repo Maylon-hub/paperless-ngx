@@ -152,6 +152,12 @@ jobs:
           flags: backend-python-${{ matrix.python-version }}
           files: coverage.xml
           report_type: coverage
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        if: matrix.python-version == '3.12'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Stop containers
         if: always()
         run: |
