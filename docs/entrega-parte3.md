@@ -1,4 +1,3 @@
-
 # Entrega da Parte 3: Testes, Cobertura e Qualidade
 
 O objetivo desta etapa foi garantir que o projeto possua uma suíte de testes robusta e automatizada, cobertura de código mensurável e análise estática ativa no CI/CD.
@@ -23,7 +22,7 @@ O objetivo desta etapa foi garantir que o projeto possua uma suíte de testes ro
 - [NEW] [test_validators.py](file:///d:/GitHub/ES2/paperless-ngx/src/documents/tests/test_validators.py)
 
 > [!TIP]
-> A esteira do GitHub Actions está pronta para ser commitada e rodar em seu repositório original. Basta você garantir que configurou a variável `SONAR_TOKEN` na aba *Secrets* do seu repositório no GitHub para que a análise do SonarCloud passe a relatar os code smells, vulnerabilidades e cobertura gerada!
+> A esteira do GitHub Actions está pronta para ser commitada e rodar em seu repositório original. Basta você garantir que configurou a variável `SONAR_TOKEN` na aba _Secrets_ do seu repositório no GitHub para que a análise do SonarCloud passe a relatar os code smells, vulnerabilidades e cobertura gerada!
 
 ## Próximos Passos (Validação Manual)
 

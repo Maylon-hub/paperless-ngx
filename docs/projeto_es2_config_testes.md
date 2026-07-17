@@ -11,8 +11,7 @@ Por padrão, as configurações do projeto limitam a resolução de dependência
 Para resolver essas limitações e rodar o projeto no Windows, aplicamos as seguintes alterações:
 
 1. **Atualização no [pyproject.toml](file:///d:/GitHub/ES2/paperless-ngx/pyproject.toml):**
-
-   * Adicionamos a plataforma Windows (`win32`) na chave `environments` sob a tabela `[tool.uv]`:
+   - Adicionamos a plataforma Windows (`win32`) na chave `environments` sob a tabela `[tool.uv]`:
 
      ```toml
      [tool.uv]
@@ -24,7 +23,7 @@ Para resolver essas limitações e rodar o projeto no Windows, aplicamos as segu
      ]
      ```
 
-   * Adicionamos a biblioteca `python-magic-bin` condicionalmente para Windows para prover os binários do `libmagic`:
+   - Adicionamos a biblioteca `python-magic-bin` condicionalmente para Windows para prover os binários do `libmagic`:
 
      ```toml
      dependencies = [
@@ -41,14 +40,15 @@ Para resolver essas limitações e rodar o projeto no Windows, aplicamos as segu
    uv lock
    ```
 
-   *Este comando atualizou o arquivo de travas adicionando as dependências de compatibilidade (como `python-magic-bin` e `pywin32`).*
+   _Este comando atualizou o arquivo de travas adicionando as dependências de compatibilidade (como `python-magic-bin` e `pywin32`)._
+
 3. **Sincronização do Ambiente Virtual:**
 
    ```bash
    uv sync --group testing
    ```
 
-   *Instala todas as dependências de backend e bibliotecas de testes.*
+   _Instala todas as dependências de backend e bibliotecas de testes._
 
 ---
 
@@ -94,29 +94,28 @@ PAPERLESS_DBENGINE=sqlite uv run pytest
 
 ## 3. Comandos Úteis para Otimização
 
-* **Executar apenas um módulo de teste específico (ex: testes de expressões regulares):**
+- **Executar apenas um módulo de teste específico (ex: testes de expressões regulares):**
 
   ```powershell
   $env:PAPERLESS_DBENGINE="sqlite"
   uv run pytest src/documents/tests/test_regex.py
   ```
 
-* **Executar um único teste específico em um arquivo:**
+- **Executar um único teste específico em um arquivo:**
 
   ```powershell
   $env:PAPERLESS_DBENGINE="sqlite"
   uv run pytest src/documents/tests/test_regex.py::TestValidateRegexPattern::test_valid_pattern
   ```
 
-* **Desabilitar execução paralela (Para fins de debug ou análise sequencial):**
+- **Desabilitar execução paralela (Para fins de debug ou análise sequencial):**
 
   ```powershell
   $env:PAPERLESS_DBENGINE="sqlite"
   uv run pytest -p no:xdist
   ```
 
-* **Acessar os Relatórios de Cobertura de Código:**
+- **Acessar os Relatórios de Cobertura de Código:**
   Ao término de qualquer execução do pytest, os relatórios são salvos na raiz do repositório:
-
-  * **HTML (Visual):** Abra o arquivo [htmlcov/index.html](file:///d:/GitHub/ES2/paperless-ngx/htmlcov/index.html) no navegador para auditar a cobertura linha a linha.
-  * **XML (SonarQube/SonarCloud):** Localizado no arquivo [coverage.xml](file:///d:/GitHub/ES2/paperless-ngx/coverage.xml).
+  - **HTML (Visual):** Abra o arquivo [htmlcov/index.html](file:///d:/GitHub/ES2/paperless-ngx/htmlcov/index.html) no navegador para auditar a cobertura linha a linha.
+  - **XML (SonarQube/SonarCloud):** Localizado no arquivo [coverage.xml](file:///d:/GitHub/ES2/paperless-ngx/coverage.xml).

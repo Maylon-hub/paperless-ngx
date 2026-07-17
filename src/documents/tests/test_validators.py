@@ -35,11 +35,13 @@ class TestValidators:
 
     @mock.patch("documents.validators.urlparse")
     def test_uri_validator_general_exception(
-        self, mock_urlparse: mock.MagicMock,
+        self,
+        mock_urlparse: mock.MagicMock,
     ) -> None:
         # Mock urlparse to raise an arbitrary exception to test the catch-all block
         mock_urlparse.side_effect = Exception("Test exception")
         with pytest.raises(
-            ValidationError, match=r"Unable to parse URI http://example\.com",
+            ValidationError,
+            match=r"Unable to parse URI http://example\.com",
         ):
             uri_validator("http://example.com")

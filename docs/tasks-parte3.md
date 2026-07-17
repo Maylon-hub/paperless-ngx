@@ -1,4 +1,3 @@
-
 # Tarefas: Testes, Cobertura e SonarCloud
 
 - `[/]` 1. **Setup e Cobertura Base**
