@@ -167,3 +167,45 @@ def compute_checksum(path: Path, chunk_size: int = 65536) -> str:
         while chunk := f.read(chunk_size):
             h.update(chunk)
     return h.hexdigest()
+
+
+def format_byte_size(size_in_bytes: int) -> str:
+    """
+    Format a byte count into a human-readable string.
+    """
+    if size_in_bytes < 0:
+        raise ValueError("Size cannot be negative")
+
+    suffixes = ["B", "KB", "MB", "GB", "TB", "PB"]
+    index = 0
+    size = float(size_in_bytes)
+
+    while size >= 1024.0 and index < len(suffixes) - 1:
+        size /= 1024.0
+        index += 1
+
+    if index == 0:
+        return f"{int(size)} {suffixes[index]}"
+    return f"{size:.1f} {suffixes[index]}"
+
+
+def safe_truncate(text: str, max_length: int) -> str:
+    """
+    Truncate a string to max_length without breaking words if possible,
+    and append '...' if truncated.
+    """
+    if max_length < 3:
+        raise ValueError("max_length must be at least 3")
+
+    if len(text) <= max_length:
+        return text
+
+    truncated = text[: max_length - 3]
+
+    # If we cut in the middle of a word, find the last space and cut there
+    if len(text) > max_length - 3 and text[max_length - 3] != " ":
+        last_space = truncated.rfind(" ")
+        if last_space > 0:
+            truncated = truncated[:last_space]
+
+    return f"{truncated.rstrip()}..."
