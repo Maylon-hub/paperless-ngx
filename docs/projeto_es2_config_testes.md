@@ -11,6 +11,7 @@ Por padrão, as configurações do projeto limitam a resolução de dependência
 Para resolver essas limitações e rodar o projeto no Windows, aplicamos as seguintes alterações:
 
 1. **Atualização no [pyproject.toml](file:///d:/GitHub/ES2/paperless-ngx/pyproject.toml):**
+
    * Adicionamos a plataforma Windows (`win32`) na chave `environments` sob a tabela `[tool.uv]`:
      ```toml
      [tool.uv]
@@ -30,20 +31,51 @@ Para resolver essas limitações e rodar o projeto no Windows, aplicamos as segu
        ...
      ]
      ```
-
 2. **Geração do Lockfile Atualizado (`uv.lock`):**
+
    ```bash
    uv lock
    ```
-   *Este comando atualizou o arquivo de travas adicionando as dependências de compatibilidade (como `python-magic-bin` e `pywin32`).*
 
+   *Este comando atualizou o arquivo de travas adicionando as dependências de compatibilidade (como `python-magic-bin` e `pywin32`).*
 3. **Sincronização do Ambiente Virtual:**
+
    ```bash
    uv sync --group testing
    ```
+
    *Instala todas as dependências de backend e bibliotecas de testes.*
 
 ---
+
+# Copiar o compose recomendado para a raiz
+
+# Copiar o compose recomendado para a raiz
+
+Copy-Item docker/compose/docker-compose.postgres-tika.yml docker-compose.yml
+Copy-Item docker/compose/docker-compose.env docker-compose.env
+Copy-Item docker/compose/.env .env
+
+# Copiar o compose recomendado para a raiz
+
+Copy-Item docker/compose/docker-compose.postgres-tika.yml docker-compose.yml
+Copy-Item docker/compose/docker-compose.env docker-compose.env
+Copy-Item docker/compose/.env .env
+
+# Copiar o compose recomendado para a raiz
+
+Copy-Item docker/compose/docker-compose.postgres-tika.yml docker-compose.yml
+Copy-Item docker/compose/docker-compose.env docker-compose.env
+Copy-Item docker/compose/.env .env
+
+# Copiar o compose recomendado para a raiz
+
+Copy-Item docker/compose/docker-compose.postgres-tika.yml docker-compose.yml
+Copy-Item docker/compose/docker-compose.env docker-compose.env
+Copy-Item docker/compose/.env .env
+
+
+Copy-Item docker/compose/.env .env
 
 ## 2. Execução da Suíte de Testes com SQLite em Memória
 
@@ -52,6 +84,7 @@ Para rodar os testes unitários de maneira ágil, isolada e sem a necessidade de
 Abra o terminal na pasta do projeto e use os comandos a seguir de acordo com a sua interface de linha de comando:
 
 ### A) PowerShell (Recomendado)
+
 ```powershell
 # 1. Define a variável de ambiente para forçar o SQLite na sessão do PowerShell
 $env:PAPERLESS_DBENGINE="sqlite"
@@ -61,6 +94,7 @@ uv run pytest
 ```
 
 ### B) Command Prompt (cmd.exe)
+
 ```cmd
 # 1. Define a variável de ambiente no prompt
 set PAPERLESS_DBENGINE=sqlite
@@ -70,6 +104,7 @@ uv run pytest
 ```
 
 ### C) Bash (Git Bash / WSL / Linux)
+
 ```bash
 PAPERLESS_DBENGINE=sqlite uv run pytest
 ```
@@ -79,24 +114,44 @@ PAPERLESS_DBENGINE=sqlite uv run pytest
 ## 3. Comandos Úteis para Otimização
 
 * **Executar apenas um módulo de teste específico (ex: testes de expressões regulares):**
+
   ```powershell
   $env:PAPERLESS_DBENGINE="sqlite"
   uv run pytest src/documents/tests/test_regex.py
   ```
-
 * **Executar um único teste específico em um arquivo:**
+
   ```powershell
   $env:PAPERLESS_DBENGINE="sqlite"
   uv run pytest src/documents/tests/test_regex.py::TestValidateRegexPattern::test_valid_pattern
   ```
-
 * **Desabilitar execução paralela (Para fins de debug ou análise sequencial):**
+
   ```powershell
   $env:PAPERLESS_DBENGINE="sqlite"
   uv run pytest -p no:xdist
   ```
-
 * **Acessar os Relatórios de Cobertura de Código:**
   Ao término de qualquer execução do pytest, os relatórios são salvos na raiz do repositório:
+
   * **HTML (Visual):** Abra o arquivo [htmlcov/index.html](file:///d:/GitHub/ES2/paperless-ngx/htmlcov/index.html) no navegador para auditar a cobertura linha a linha.
   * **XML (SonarQube/SonarCloud):** Localizado no arquivo [coverage.xml](file:///d:/GitHub/ES2/paperless-ngx/coverage.xml).
+
+# Copiar o compose recomendado para a raiz
+
+Copy-Item docker/compose/docker-compose.postgres-tika.yml docker-compose.yml
+Copy-Item docker/compose/docker-compose.env docker-compose.env
+Copy-Item docker/compose/.env .env
+
+# Copiar o compose recomendado para a raiz
+
+Copy-Item docker/compose/docker-compose.postgres-tika.yml docker-compose.yml
+Copy-Item docker/compose/docker-compose.env docker-compose.env
+Copy-Item docker/compose/.env .env
+
+
+# Copiar o compose recomendado para a raiz
+
+Copy-Item docker/compose/docker-compose.postgres-tika.yml docker-compose.yml
+Copy-Item docker/compose/docker-compose.env docker-compose.env
+Copy-Item docker/compose/.env .env

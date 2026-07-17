@@ -84,7 +84,7 @@ Este bloco demonstra que o sistema foi configurado corretamente e está funciona
 3. **Criação das pastas de volumes:**
 
    ```powershell
-   mkdir consume export
+   mkdir consume, export
    ```
 
 4. **Subir os Containers:**
