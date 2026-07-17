@@ -2,8 +2,7 @@
 trigger: manual
 ---
 
-A avaliação será baseada nas evidências deixadas no repositório e no vídeo final de síntese. Antes de
-entregar, o grupo deve verificar se o repositório contém evidências claras para as atividades realizadas.
+A avaliação será baseada nas evidências deixadas no repositório e no vídeo final de síntese. Antes de entregar, o grupo deve verificar se o repositório contém evidências claras para as atividades realizadas.
 
 Checklist mínimo:
 • Repositório aberto e acessível;
