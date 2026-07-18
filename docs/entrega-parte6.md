@@ -55,9 +55,7 @@ Todos os requisitos solicitados podem ser verificados n os seguintes locais:
 - **Sugestão de Fala**: *"Sobre minhas modificações no sistema, implementei de forma atômica duas funções isoladas em `utils.py` (uma para conversão legível de tamanho de dados e uma para truncamento seguro sem quebrar palavras), tudo respaldado pela nova suíte de testes `test_utils.py`.*
 - *Além disso, para resolução de um Code Smell crítico identificado pelo Sonar, nós limpamos um TODO depreciado e refatoramos o bloco de retorno e lógica no arquivo `matching.py`."*
 
-###
-
-    Correção Realizada
+### Correção Realizada
 
 - **Arquivo**: `src/documents/matching.py`
 - **Dívida Técnica**: Presença de `# TODO: make this better` associada a uma concatenação confusa de strings multilaterais no cálculo de fuzzy matching (`fuzz.partial_ratio`).
