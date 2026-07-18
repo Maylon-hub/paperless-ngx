@@ -1,5 +1,7 @@
 import pytest
-from documents.utils import format_byte_size, safe_truncate
+
+from documents.utils import format_byte_size
+from documents.utils import safe_truncate
 
 
 class TestFormatByteSize:
